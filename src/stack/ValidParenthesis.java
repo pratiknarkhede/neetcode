@@ -13,29 +13,18 @@ public class ValidParenthesis {
 
 	}
 
-	private static boolean isValid(String str) {
-		//fails at "(["
-		if(str.length()%2==1)return false;
-		Stack<Character> stack = new Stack<>();
-		char[] charArray=str.toCharArray();
-		for(char ch: charArray) {
-			if(ch=='('||ch=='['||ch=='{') {
-				stack.add(ch);
-			}
-			else if(ch==')' && !stack.empty() && stack.peek()==ch) {
-				stack.pop();
-			}
-			else if(ch==']' && !stack.empty() && stack.peek()==ch) {
-				stack.pop();
-			}
-			else if(ch==']' && !stack.empty() && stack.peek()==ch) {
-				stack.pop();
-			}
-		}
-		return stack.empty();
-	}
+	/*
+	 * private static boolean isValid(String str) { //fails at "(["
+	 * if(str.length()%2==1)return false; Stack<Character> stack = new Stack<>();
+	 * char[] charArray=str.toCharArray(); for(char ch: charArray) {
+	 * if(ch=='('||ch=='['||ch=='{') { stack.add(ch); } else if(ch==')' &&
+	 * !stack.empty() && stack.peek()==ch) { stack.pop(); } else if(ch==']' &&
+	 * !stack.empty() && stack.peek()==ch) { stack.pop(); } else if(ch==']' &&
+	 * !stack.empty() && stack.peek()==ch) { stack.pop(); } } return stack.empty();
+	 * }
+	 */
 
-	private static boolean isValid1(String str) {
+	private static boolean isValid(String str) {
 		if(str.length()%2==1)return false;
 		Stack<Character> stack = new Stack<>();
 		Map<Character, Character> map = new HashMap<>();
